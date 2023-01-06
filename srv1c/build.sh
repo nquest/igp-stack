@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker build --tag srv1c .
+docker build --tag srv1c:latest .

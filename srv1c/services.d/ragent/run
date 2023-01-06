@@ -1,0 +1,2 @@
+#!/command/with-contenv sh
+exec s6-setuidgid usr1cv8 /opt/1cv8/x86_64/"${SERVER_VERSION}"/ragent -D "${SERVER_DATA}"
