@@ -35,7 +35,7 @@ RUN localedef --inputfile ru_RU --force --charmap UTF-8 --alias-file /usr/share/
 ENV LANG ru_RU.utf8
 ENV SERVER_VERSION 8.3.22.1750
 ENV SERVER_DATA /home/usr1cv8
-ADD ./distr/* /tmp/distr/
+ADD ../distr/* /tmp/distr/
 RUN  /tmp/distr/setup-full-${SERVER_VERSION}-x86_64.run  \
       --mode unattended \
       --enable-components server,ru,server_admin \
@@ -48,6 +48,8 @@ COPY ./services.d /etc/services.d
 EXPOSE 1540-1541 1545 1560-1591
 
 VOLUME /home/usr1cv8
+VOLUME /var/1C
+
 
 # CMD ["sh", "-c", "/opt/1cv8/x86_64/${SERVER_VERSION}/ragent"]
 
