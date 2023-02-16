@@ -35,7 +35,7 @@ RUN localedef --inputfile ru_RU --force --charmap UTF-8 --alias-file /usr/share/
 ENV LANG ru_RU.utf8
 ENV SERVER_VERSION 8.3.22.1750
 ENV SERVER_DATA /home/usr1cv8
-ADD ../distr/* /tmp/distr/
+ADD ./distr/* /tmp/distr/
 RUN  /tmp/distr/setup-full-${SERVER_VERSION}-x86_64.run  \
       --mode unattended \
       --enable-components server,ru,server_admin \
