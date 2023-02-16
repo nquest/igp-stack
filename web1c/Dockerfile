@@ -38,6 +38,8 @@ RUN  /tmp/distr/setup-full-${SERVER_VERSION}-x86_64.run  \
 
 RUN mkdir -p /var/run/apache2
 COPY httpd-foreground /usr/local/bin/
+RUN echo "LoadModule _1cws_module /opt/1cv8/x86_64/${SERVER_VERSION}/wsap24.so" > /etc/apache2/mods-enabled/wsap24.load
+RUN echo "IncludeOptional /var/www/bases/*.conf" > /etc/apache2/conf-enabled/bases.conf
 EXPOSE 80
 VOLUME /var/www/
 
