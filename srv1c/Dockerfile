@@ -45,6 +45,9 @@ RUN  /tmp/distr/setup-full-${SERVER_VERSION}-x86_64.run  \
 # s6 scripts
 COPY ./services.d /etc/services.d 
 
+# Kill active sessions script
+COPY ./killsessions.sh /home/usr1cv8/
+
 EXPOSE 1540-1541 1545 1560-1591
 
 VOLUME /home/usr1cv8
